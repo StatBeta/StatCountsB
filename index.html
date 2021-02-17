@@ -36,13 +36,13 @@
       </nav>
       
       
-   
-      <div class="alert alert-info">
-        <strong>Notice anything?</strong> Site design update, yet again! this may change a ton, and there may be bugs right now.
+   <br>
+      <div id="alerta" class="alert alert-info">
+        <strong id="bolder">Build#21y217d7v changes:</strong> Improved (cosmetically) the search box, results, modal, alert box | bug fixes (chart)
       </div>
    
       </div>
-      
+      <br>
 
 <body style="background-color: #161616;"></body>
 
@@ -109,6 +109,16 @@
     
  
 }
+#alerta{
+  width: 50%;
+  margin: auto;
+  background-color:rgb(245, 112, 112);
+  border-color: rgb(245, 112, 112);
+  color: rgb(250, 217, 217);
+}
+#bolder{
+  color: rgb(255, 255, 255);
+}
 #loal2{
     color:white;   
     font-size:3.5vh !Important;
@@ -119,7 +129,9 @@
     
  
 }
-
+#body{
+  background-image: var(banner);
+}
 #topbarnav{
   background-color: rgb(44, 44, 44);
 }
@@ -301,13 +313,38 @@ top: 14%;*/
   font-size: 3vh;
   vertical-align: 55%;
   
+} 
+#counterPlatformYTS{
+  color: #ff5858;
+  display:inline;
+  font-size: 2vh;
+  vertical-align: 55%;
+}
+#resultImg:hover{
+  -webkit-transform:rotate(359.9deg);
+  -moz-transform: rotate(359.9deg);
+  -ms-transform: rotate(359.9deg);
+  -o-transform: rotate(359.9deg);
+  transform: rotate(359.9deg);
+  transition: .7s;
+  filter:brightness(1.5)
 }
 #usebox{
   vertical-align: middle;
 
 }
+#resultImgText{
+  position: relative;
+}
+#resultName:hover{
+  color: #ff5858!important;
+  transition: 0.2s !important;
+}
 #PostContents{
  display:inline;
+}
+#resultName{
+  display:inline;
 }
 #realtime-watermark{
   filter:brightness(255);
@@ -320,19 +357,33 @@ top: 14%;*/
   top: 36%;
   left: 43%;
 }
+#exampleModalCenter{
+  border-radius: 0%;
+  box-shadow: 12px 12px 7px 1px #979797;
+}
+.modal-header{
+  border-bottom: transparent;
+}
+.modal-footer{
+  border-top: transparent;
+}
+#resultImg{
+  border-color: white;
+  border: 2px;
+}
 </style>
 	</head>
 	<script type="text/javascript">
 	</script>
-		<body id="body" style="background-color: rgb(0, 0, 0);">
+		<body id="body">
 				
-				<b id=channelName" style="color: rgb(0, 0, 0); border: 3px none green;"></b>
+			
 				
 				
 				
 
 									
-
+        
                 <script src="https://code.highcharts.com/stock/highstock.js"></script>
 				
                 <div id="statspacea"  class="container">    
@@ -385,15 +436,17 @@ top: 14%;*/
                         <div class="modal-body">
                   
                           <svg class="spinner" width="120px" height="120px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                            <circle class="path" fill="none" stroke-width="1" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                            <circle class="path" fill="none" stroke-width="5" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
                          </svg>
                          <p id="lold" style="color: rgb(255, 255, 255); font-size: 2vh;">Waiting for user input</p>
                             <div id="Results">
                               <button id="clickable">
                              <img id="resultImg"width=100 height=100 src="https://www.voanews.com/themes/custom/voa/images/Author__Placeholder.png">
+                     
                           </button>
                               <div id="UsernameBox">
-                                  <p style=" color:rgb(255, 255, 255)"id="resultName">Enter a username to search</p>
+                                  <p style=" color:rgb(255, 255, 255)"id="resultName">Enter a username to search</p>\
+                                  <i id="counterPlatformYTS" class="fab fa-youtube"></i>
                               </div>
                               <div id="countBox">
                                   <p style=" color:rgb(36, 165, 90)"id="resultCount">0 subscribers</p>
@@ -401,11 +454,11 @@ top: 14%;*/
                           </div>
                           <p style="color:rgb(90, 90, 90)"id="resultidyeah"></p>
                           <br>
-                          <input type="text" class="form-control" id="choose" aria-describedby="lol"></input>
+                 
                         </div>
                         <div class="modal-footer">
                       
-                        
+                          <input type="text" class="form-control" id="choose" aria-describedby="lol"></input>
                           <button id="updateChannel"type="button" class="btn btn-outline-dark"  style="color:rgb(255, 255, 255)">Search</button>
                          
                           </div>
@@ -427,6 +480,10 @@ font-size: 3vh;
 }
 #choose{
   background-color: rgb(17, 17, 17);
+  width: 70%;
+  border-radius: 0%;
+  border-color: transparent;
+  color: white;
 }
 #resultImg{
 border-radius: 50%;
@@ -614,7 +671,7 @@ lineColor: line,
                     }, 1000);
                     }
                  
-                   
+                   var banner = '';
                     var usersid = '';
                     var apiUrl = 'https://asd123proxdn.ndx4256.repl.co/youtube/search/'+submittedName+'';
                     $.getJSON(apiUrl, function(result) {
@@ -658,9 +715,12 @@ function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+(
         $.getJSON(url, function(data) {
           if (data.subCount == null) {
             $.getJSON(urlAPI, function(apiData) {
+              banner = apiData.banner
               channelSubs.innerHTML = apiData.subCount
               PostContents.innerHTML = apiData.name
               $('#imagething').html('<img src="'+apiData.banner+'"< style="width:200px" id="imagething2"/img>');
+              document.querySelector("#body").style.background(apiData.banner);
+        
             });
           } else {
 
@@ -698,15 +758,13 @@ function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+(
             channelSubs.innerHTML = data.subCount
             PostContents.innerHTML = data.name
             $('#imagething').html('<img src="'+data.profilebanner+'"< style="width:200px" id="imagething2"/img>');
+            $('#backgroundImage').html('<img  id="backgroundImage" width=2560 height=1440 src="'+data.profilebanner+'"</img>');
             
 
             var chartthingidk = parseFloat(data.subCount)
             chart.series[0].addPoint([Date.now(),chartthingidk])
             }
     
-            var chartthingidk = parseFloat(data.subCount)
-            if (chart.series[0].points.length == 1500) chart.series[0].data[0].remove();
-            chart.series[0].addPoint([Date.now(),chartthingidk])
             function GetGoal(count) {
     if (count < 10) return 10; var x1 = Math.floor(Math.log10(count)); var x2 = Math.ceil(count / 10 ** x1); var x3 = x2 * 10 ** x1; var goal = x3 - count; return goal
   }
