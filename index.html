@@ -30,7 +30,7 @@
          
           </li>
         </ul>
-        <p style="color: rgb(133, 133, 133);font-size: 2vh; margin: auto;" id="buildNumber">b.StatCounts v2.12 Build#21y217d5v</p>
+        <p style="color: rgb(133, 133, 133);font-size: 2vh; margin: auto;" id="buildNumber">b.StatCounts v2.12 Build#</p>
         <p style="color: rgb(133, 133, 133);font-size: 2vh; margin: auto;" id="userA">User Agent:</p>
         <button id="loal2" data-toggle="modal" data-target="#exampleModalCenter"class="fas fa-search"></button>
       </nav>
@@ -71,7 +71,7 @@
     }
     @font-face {
         font-family: Segoe TV Regular;
-        src: url(https://statcounts.com/SegoeTVRegular.ttf);
+        src: url(https://statcounts.com/SegoeTVRegular.TTF);
     }
     
 
@@ -632,6 +632,10 @@ lineColor: line,
                  
                 }
                     $(document).ready(function() {
+                      var buildIdUrl = 'https://asd123proxdn.ndx4256.repl.co/currentBetaBuild';
+                      $.getJSON(buildIdUrl, function(data) {
+                        document.querySelector("#buildNumber").innerHTML = "b.StatCounts v2.12 Build#" + data.currentBuild
+                      });
                       document.querySelector("#userA").innerHTML =  navigator.userAgent
                       document.querySelector("#Results").style.display = "none"
                         var defaultCID = "UC-lHJZR3Gqxm24_Vd_AJ5Yw";			
