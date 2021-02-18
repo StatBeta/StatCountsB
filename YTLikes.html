@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<head>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">     
+<link rel="preconnect" href="https://fonts.gstatic.com">
+
+<nav id="topbarnav"class="navbar navbar-expand-sm ">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <i id="loal"class="fas fa-chart-area"></i>
+          </li>
+          <li class="nav-item">
+            <a id="twitterpromo" class="fab fa-twitter" href="https://twitter.com/statcounts"></a>
+          </li>
+          
+          <li class="nav-item">
+            <a id="twitterpromo"class="fab fa-discord"></a>
+          </li>
+          <li class="nav-item">
+            <a id="twitterpromo"class="fab fa-youtube" href="https://youtube.com/statcounts"></a>
+          </li>
+         
+          <li>
+         
+          </li>
+        </ul>
+        <p style="color: rgb(133, 133, 133);font-size: 2vh; margin: auto;" id="buildNumber">b.StatCounts v2.12 Build#</p>
+        <p style="color: rgb(133, 133, 133);font-size: 2vh; margin: auto;" id="userA">User Agent:</p>
+        <button id="loal2" data-toggle="modal" data-target="#exampleModalCenter"class="fas fa-search"></button>
+      </nav>
+      
+      
+   <br>
+      <div id="alerta" class="alert alert-info">
+        <strong id="bolder">Build#21y217d8v changes:</strong> added progress bar for update interval, increased interval to 3s, added video likes
+      </div>
+   
+      </div>
+      <br>
+
+<body style="background-color: #161616;"></body>
+
+
+<html>
+	<head>
+		<title>v2.12</title>
+		<link rel="stylesheet" href="odometer-theme-minimal.css" />
+		<script src="odometer.js"></script>
+		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+		
+	<style>
+
+@font-face {
+        font-family: Roboto Regular;
+        src: url(https://mixerno.space/font/Roboto-Regular.ttf);
+    }
+
+    @font-face {
+        font-family: Roboto Medium;
+        src: url(https://mixerno.space/font/Roboto-Medium.ttf);
+    }
+    @font-face {
+        font-family: Roboto Bold;
+        src: url(https://mixerno.space/font/Roboto-Bold.ttf);
+    }
+    @font-face {
+        font-family: Segoe TV Regular;
+        src: url(https://statcounts.com/SegoeTVRegular.TTF);
+    }
+    
+
+	
+	</style>
+	
+		<style>
+		
+		#channelSubs{
+		
+			font-size:15vh;
+            font-weight: bold;
+            font-family: Segoe TV Regular;
+		
+		}
+		
+
+        #channelSubs2{
+		
+        font-size:5vh;
+        
+    
+    }
+    #twitterpromo{
+      color:white; 
+      font-size: 1.8vh;
+      float:left;
+      padding: 7px;
+    }
+#loal{
+    color:white;   
+    font-size:3.5vh !Important;
+    background-color: transparent;
+    border-color: transparent;
+    
+ 
+}
+#alerta{
+  width: 50%;
+  margin: auto;
+  background-color:rgb(245, 112, 112);
+  border-color: rgb(245, 112, 112);
+  color: rgb(250, 217, 217);
+}
+#bolder{
+  color: rgb(255, 255, 255);
+}
+#loal2{
+    color:white;   
+    font-size:3.5vh !Important;
+    position: absolute;
+    right: 1%;
+    background-color: transparent;
+    border-color: transparent;
+    
+ 
+}
+#body{
+  background-image: var(banner);
+}
+#topbarnav{
+  background-color: rgb(44, 44, 44);
+}
+
+    bgimage{
+        filter: blur(4px);
+    }
+
+    #Milestone{
+		
+        font-size:5vh;
+        font-family: 'Source Sans Pro', sans-serif;
+    
+    }
+		</style>
+	
+	
+		<style>
+		
+		</style>
+	
+	<style>
+	
+	.odometer.odometer-auto-theme,
+.odometer.odometer-theme-default {
+    font-family: Arial, sans-serif;
+    line-height: 1.1em
+}
+	
+    </style>
+    
+	
+<style>
+
+#PostContents{
+    color: rgb(255, 255, 255);
+    font-family: Segoe TV Regular;
+    
+}
+#PostContents:hover{
+  color: rgb(245, 112, 112)  !important;
+  transition: 0.2s !important;
+}
+
+#subscriberslola:hover{
+  color: rgb(245, 112, 112)  !important;
+  transition: 0.3s !important;
+}
+
+#imagething2{
+    object-fit: cover;
+    z-index: -1;
+    width: 737% !important; /* width of container */
+    height: 140px !Important; /* height of container */
+    filter:blur(2.5px)
+}
+
+#imagething3{
+    border: solid .95vh !Important;
+    border-radius: 8%;
+    border-color: rgb(31, 32, 32);
+    
+  
+}
+
+*{
+    text-align: center !Important;
+}
+
+
+
+
+</style>
+<style>
+
+
+#subscriberslola{
+    font-weight:bold !Important;
+    font-family: Segoe TV Regular;
+}
+
+#PostContents {
+    color: rgb(255, 255, 255);
+    
+}
+
+
+
+#imagething1233 {
+    float: right;
+    margin-top: -13%;
+    
+/*
+position:absolute;
+left: 70%;
+top: 14%;*/
+}
+#lollllll{
+    color: #ffffff;
+    background-color: #404040;
+   border-color: #404040;
+}
+#goalpog{
+    font-size:  5vh;
+    font-family: Segoe TV Regular;
+}
+
+#anotherodo{
+    font-size:  5vh;
+    font-family: Segoe TV Regular;
+}
+#statspace1{
+    width: 40%;
+    
+    display: inline-block;
+   background-color: rgb(44, 44, 44);
+    
+}
+#statspacea{
+    overflow: hidden;
+    background-color: #1a1a1a;
+}
+#statspace2{
+    width: 40%;
+    display: inline-block;
+ 
+    background-color: rgb(44, 44, 44);
+}
+
+
+#PostContents{
+    font-weight:bold !Important;
+}
+
+#statspace{
+    padding: 2%;
+}
+#chart{
+    padding: 2%;
+    background-color: rgb(17, 17, 17);
+}
+.modal-content {
+    background-color: #1b1a1a;
+}
+#searchicon{
+  color:white;
+  padding: 5px;
+  font-size: 3vh;
+}
+#embedButton{
+   color:rgb(167, 167, 167);
+  padding: 5px;
+  font-size: 3vh;
+}
+
+.spinner{
+  padding: 33px;
+}
+#lold{
+  display: inline
+}
+#subs{
+  color: white;
+  display: inline;
+}
+#xicon{
+  color: rgb(255, 255, 255);
+  font-size: 4vh;
+      text-shadow: 0 0px 0 ; 
+     opacity: 1;
+}
+#showEmbed{
+  background: transparent;
+  border: transparent;
+}
+#counterPlatformYT{
+  color: #ff5858;
+  display:inline;
+  font-size: 3vh;
+  vertical-align: 55%;
+  
+} 
+#counterPlatformYTS{
+  color: #ff5858;
+  display:inline;
+  font-size: 2vh;
+  vertical-align: 55%;
+}
+#resultImg:hover{
+  -webkit-transform:rotate(359.9deg);
+  -moz-transform: rotate(359.9deg);
+  -ms-transform: rotate(359.9deg);
+  -o-transform: rotate(359.9deg);
+  transform: rotate(359.9deg);
+  transition: .7s;
+  filter:brightness(1.5)
+}
+#usebox{
+  vertical-align: middle;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
+#resultImgText{
+  position: relative;
+}
+#resultName:hover{
+  color: #ff5858!important;
+  transition: 0.2s !important;
+}
+#PostContents{
+ display:inline;
+ white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  margin: auto;
+
+}
+#resultName{
+  display:inline;
+}
+#realtime-watermark{
+  filter:brightness(255);
+  filter:invert(1);
+}
+#realtime-watermark-container{
+  filter:opacity(0.15);
+  z-index: 2;
+  position: absolute;
+  top: 36%;
+  left: 43%;
+}
+#exampleModalCenter{
+  border-radius: 0%;
+  box-shadow: 12px 12px 7px 1px #979797;
+}
+.modal-header{
+  border-bottom: transparent;
+}
+.modal-footer{
+  border-top: transparent;
+}
+#resultImg{
+  border-color: white;
+  border: 2px;
+}
+</style>
+	</head>
+	<script type="text/javascript">
+	</script>
+		<body id="body">
+				
+			
+				
+				
+				
+
+									
+        
+                <script src="https://code.highcharts.com/stock/highstock.js"></script>
+				
+                <div id="statspacea"  class="container">    
+                    <div id="imagething" style="width:150px"></div>
+             
+                    
+                   
+                
+                <div id="odobox" style="background-color: rgb(24, 24, 24);">
+                  <div id="realtime-watermark-container">
+                    <img id="realtime-watermark" src="https://statcounts.com/realtime-watermark.png" width=250 height=180>
+                  </div>
+                  <div id="usebox">
+                    <div style="font-size: 6vh; color:rgb(255, 255, 255)"  id="PostContents">lol</div> 
+                    <i id="counterPlatformYT" class="fab fa-youtube"></i>
+                  </div>
+            
+                <p class="odometer odometer-auto-theme" id="channelSubs" style="color: rgb(255, 255, 255);">0</p>
+                 <p id="subscriberslola" style="color: rgb(255, 255, 255);">Likes</p> 
+                 <div id="myBar" style="height:4px;width:0; background-color: rgb(245, 112, 112); z-index: 2;"></div>
+            </div>
+                <div id="statspace" style="background-color: #141414;">
+                    
+                    <div id="statspace1">
+                        <p id="nothing"></p>
+                        <p class="odometer odometer-auto-theme" id="goalpog" style="color: rgb(255, 255, 255);">0</p>
+                        <p id="title2"style="color: rgb(255, 255, 255);">Milestone</p>
+                    </div>
+                    <div id="statspace2">
+                        <p id="nothing"></p>
+                        <p class="odometer odometer-auto-theme" id="anotherodo" style="color: rgb(255, 255, 255);">0</p>
+                        <p id="title1"style="color: rgb(255, 255, 255);">Views</p>
+                      
+                    </div>
+                    </div>
+                <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header"> 
+                          <i id="searchicon" class="fas fa-search"></i> 
+                          <button id="showEmbed">
+
+                         
+                          <i id="embedButton" class="fas fa-code"></i> 
+                        </button>
+                          <button id="xicon" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                       
+                        <div class="modal-body">
+                  
+                          <svg class="spinner" width="120px" height="120px" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="5" stroke-linecap="round" cx="33" cy="33" r="30"></circle>
+                         </svg>
+                         <p id="lold" style="color: rgb(255, 255, 255); font-size: 2vh;">Waiting for user input</p>
+                            <div id="Results">
+                              <button id="clickable">
+                             <img id="resultImg"width=100 height=100 src="https://www.voanews.com/themes/custom/voa/images/Author__Placeholder.png">
+                     
+                          </button>
+                              <div id="UsernameBox">
+                                  <p style=" color:rgb(255, 255, 255)"id="resultName">Enter a username to search</p>\
+                                  <i id="counterPlatformYTS" class="fab fa-youtube"></i>
+                              </div>
+                              <div id="countBox">
+                                  <p style=" color:rgb(36, 165, 90)"id="resultCount">0 subscribers</p>
+                              </div>
+                          </div>
+                          <p style="color:rgb(90, 90, 90)"id="resultidyeah"></p>
+                          <br>
+                 
+                        </div>
+                        <div class="modal-footer">
+                      
+                          <input type="text" class="form-control" id="choose" aria-describedby="lol"></input>
+                          <button id="updateChannel"type="button" class="btn btn-outline-dark"  style="color:rgb(255, 255, 255)">Search</button>
+                         
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                 
+                <div id="chart"></div>
+            
+            						   <style>
+                             #resultName{
+
+font-size: 3vh;
+
+}
+#resultCount{
+font-size: 3vh;
+
+}
+#choose{
+  background-color: rgb(17, 17, 17);
+  width: 70%;
+  border-radius: 0%;
+  border-color: transparent;
+  color: white;
+}
+#resultImg{
+border-radius: 10%;
+background-color: transparent;
+border-color: transparent;
+}
+#clickable{
+background-color: transparent;
+border-color: transparent;
+}
+.spinner {
+  -webkit-animation: rotator 1.4s linear infinite;
+          animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+
+@keyframes rotator {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(270deg);
+  }
+}
+.path {
+  stroke-dasharray: 187;
+  stroke-dashoffset: 0;
+  transform-origin: center;
+  -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+          animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+
+@keyframes colors {
+  0% {
+    stroke: #4285F4;
+  }
+  25% {
+    stroke: #DE3E35;
+  }
+  50% {
+    stroke: #F7C223;
+  }
+  75% {
+    stroke: #1B9A59;
+  }
+  100% {
+    stroke: #4285F4;
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 187;
+  }
+  50% {
+    stroke-dashoffset: 46.75;
+    transform: rotate(135deg);
+  }
+  100% {
+    stroke-dashoffset: 187;
+    transform: rotate(450deg);
+  }
+}
+                           </style> 
+            <script type="text/javascript">
+            var line = "#ff5858"
+
+           
+
+chart = new Highcharts.chart({
+chart: {
+renderTo: 'chart',
+type: 'line',
+zoomType: 'x',
+backgroundColor: 'transparent',
+plotBorderColor: 'transparent'
+},
+title: {
+text: ''
+},
+xAxis: {
+type: 'datetime',
+tickPixelInterval: 500,
+gridLineColor: '#d9d9d9',
+labels: {
+style: {
+    color: '#d9d9d9'
+}
+},
+lineColor: '#ffffff',
+minorGridLineColor: '#d9d9d9',
+tickColor: '#ffffff',
+title: {
+style: {
+    color: '#d9d9d9'
+}
+}
+},
+yAxis: {
+title: {
+text: ''
+},
+gridLineColor: 'transparent',
+labels: {
+style: {
+    color: '#d9d9d9'
+}
+},
+lineColor: '#d9d9d9',
+minorGridLineColor: 'transparent',
+tickColor: '#d9d9d9'
+},
+credits: {
+enabled: false,
+text: ""
+},
+
+series: [{
+showInLegend: false,
+name: '',
+marker: { enabled: false },
+color: '#ffffff',
+lineColor: line,
+}]
+});
+
+
+            
+            </script>	
+											       
+                <script type="text/javascript">
+                      function searchUser(submittedName) {
+                    if (document.querySelector("#Results").style.display == "none") {
+                        setTimeout(() => {
+                        document.querySelector("#Results").style.display = "block"
+                        document.querySelector("#exampleModalCenter > div > div > div.modal-body > svg").style.display = "none"
+                        document.querySelector("#lold").style.display = "none"
+                    }, 1000);
+                    } else if (document.querySelector("#Results").style.display == "block") {
+                    document.querySelector("#Results").style.display = "none"
+                    document.querySelector("#exampleModalCenter > div > div > div.modal-body > svg").style.display = "inline"
+                    document.querySelector("#lold").style.display = "inline"
+                    setTimeout(() => {
+                        document.querySelector("#Results").style.display = "block"
+                        document.querySelector("#exampleModalCenter > div > div > div.modal-body > svg").style.display = "none"
+                        document.querySelector("#lold").style.display = "none"
+                    }, 1000);
+                    }
+                 
+                   var banner = '';
+                    var usersid = '';
+                    var apiUrl = 'https://asd123proxdn.ndx4256.repl.co/youtube/search/videos/'+submittedName+'';
+                    $.getJSON(apiUrl, function(result) {
+                        resultName.innerHTML = result.name
+                        document.querySelector("#resultImg").src = result.pfp
+                       id = resultidyeah.innerHTML = result.userID
+                    });
+                    setTimeout(() => {
+                        var apiUrl2 = 'https://asd123proxdn.ndx4256.repl.co/youtube/videos/'+id+'';
+                    $.getJSON(apiUrl2, function(data) {
+                        var subs = Number(data.likesCount).toLocaleString('en');
+                        resultCount.innerHTML = subs + " " + "likes"
+                    });
+                    }, 700);
+                 
+                }
+                function move() {
+                var elem = document.getElementById("myBar");   
+                var width = 1;
+                var id = setInterval(frame, 30);
+                function frame() {
+                if (width >= 100) {
+                clearInterval(id);
+                } else {
+                width++; 
+                elem.style.width = width + '%'; 
+                 }
+              }
+        }
+                    $(document).ready(function() {
+                      var buildIdUrl = 'https://asd123proxdn.ndx4256.repl.co/currentBetaBuild';
+                      $.getJSON(buildIdUrl, function(data) {
+                        document.querySelector("#buildNumber").innerHTML = "b.StatCounts v2.12 Build#" + data.currentBuild
+                      });
+                      document.querySelector("#userA").innerHTML =  navigator.userAgent
+                      document.querySelector("#Results").style.display = "none"
+                        var defaultCID = "UC-lHJZR3Gqxm24_Vd_AJ5Yw";			
+function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(m,key,value){vars[key]=value});return vars}
+						$(document).ready(function() {
+	
+	var channelName = "";
+				if(getUrlVars()['user'] !== undefined) {
+					loadChannel(getUrlVars()['user']);
+				} else  {
+					loadChannel(defaultCID);
+				}
+    
+    
+    function loadChannel(name) {
+      
+        channelName = name;
+        var urlAPI = 'https://asd123proxdn.ndx4256.repl.co/youtube/videos/'+name+''
+        
+            $.getJSON(urlAPI, function(apiData) {
+              channelSubs.innerHTML = apiData.likesCount
+              PostContents.innerHTML = apiData.name
+              $('#imagething').html('<img src="'+apiData.thumbnailMaxRes.url+'"< style="width:200px" id="imagething2"/img>');
+          
+              var chartthingidk = parseFloat(data.subCount)
+            chart.series[0].addPoint([Date.now(),chartthingidk])
+            });
+
+        
+        }
+         
+    setInterval(function() {
+
+        
+        var urlAPI = 'https://asd123proxdn.ndx4256.repl.co/youtube/videos/'+channelName+''
+      
+            $.getJSON(urlAPI, function(apiData) {
+              channelSubs.innerHTML = apiData.likesCount
+              anotherodo.innerHTML = apiData.viewsCount
+              goalpog.innerHTML = GetGoal(apiData.likesCount)
+              var chartthingidk = parseFloat(apiData.likesCount)
+            chart.series[0].addPoint([Date.now(),chartthingidk])
+            });
+    
+
+          
+           move()
+    
+            function GetGoal(count) {
+    if (count < 10) return 10; var x1 = Math.floor(Math.log10(count)); var x2 = Math.ceil(count / 10 ** x1); var x3 = x2 * 10 ** x1; var goal = x3 - count; return goal
+  }
+  goalpog.innerHTML = GetGoal(data.subCount)
+            anotherodo.innerHTML = data.viewCount
+            
+    }, 3000);
+    
+
+
+});
+document.getElementById("loal").value = "OFF"
+
+$('#loal').click(function() {
+    if (document.getElementById("loal").value == "ON") {
+        location.reload();
+        return false;
+    }
+     if (document.getElementById("loal").value == "OFF") {
+        document.getElementById("loal").value = "ON"
+    document.getElementById("body").style.background = "#1a1a1a";
+    document.getElementById("PostContents").style.color = "#ffffff";
+    document.getElementById("channelSubs").style.color = "#ffffff";
+    document.getElementById("goalpog").style.color = "#ffffff";
+    document.getElementById("anotherodo").style.color = "#ffffff";
+    document.getElementById("title1").style.color = "#ffffff";
+    document.getElementById("title2").style.color = "#ffffff";
+    document.getElementById("subscriberslola").style.color = "#ffffff";
+    document.getElementById("lollllll").style.color = "#ffffff";
+    document.getElementById("lollllll").style.background = "#404040";
+    document.getElementById("lollllll").style.border = "#404040";
+    document.getElementById("statspace").style.border = "#404040";
+    var line = "#d9d9d9"
+       
+
+    chart = new Highcharts.chart({
+chart: {
+renderTo: 'chart',
+type: 'area',
+zoomType: 'x',
+backgroundColor: 'transparent',
+plotBorderColor: 'transparent'
+},
+title: {
+text: ''
+},
+xAxis: {
+type: 'datetime',
+tickPixelInterval: 500,
+gridLineColor: '#d9d9d9',
+labels: {
+style: {
+    color: '#d9d9d9'
+}
+},
+lineColor: line,
+minorGridLineColor: '#d9d9d9',
+tickColor: line,
+title: {
+style: {
+    color: '#d9d9d9'
+}
+}
+},
+yAxis: {
+title: {
+text: ''
+},
+gridLineColor: 'transparent',
+labels: {
+style: {
+    color: '#d9d9d9'
+}
+},
+lineColor: '#d9d9d9',
+minorGridLineColor: 'transparent',
+tickColor: '#d9d9d9'
+},
+credits: {
+enabled: false,
+text: ""
+},
+
+series: [{
+showInLegend: false,
+name: '',
+marker: { enabled: false },
+color: line,
+lineColor: line,
+threshold: null,
+fillOpacity: 0.2
+}]
+});
+
+}
+});
+
+                    })
+
+                
+                    $("#updateChannel").click(function() {
+                
+                searchUser($("#choose").val());
+            });
+            $('#clickable').click(function() {
+                location.href = 'https://statbeta.github.io/StatCountsB?user='+id+''
+            });
+                
+                </script>
+				
+				<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-172872844-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-172872844-1');
+</script>		 <script async src="https://arc.io/widget.min.js#Zs8wbDVz"></script>
+        </body>
+    </head>
+</html>
