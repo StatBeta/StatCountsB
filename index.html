@@ -9,6 +9,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">     
 <link rel="preconnect" href="https://fonts.gstatic.com">
+<script src="https://apis.google.com/js/platform.js"></script>
 
 <nav id="topbarnav"class="navbar navbar-expand-sm ">
         <ul class="navbar-nav">
@@ -20,10 +21,10 @@
           </li>
           
           <li class="nav-item">
-            <a id="twitterpromo"class="fab fa-discord"></a>
+            <a id="twitterpromo2"class="fab fa-discord"></a>
           </li>
           <li class="nav-item">
-            <a id="twitterpromo"class="fab fa-youtube" href="https://youtube.com/statcounts"></a>
+            <a id="twitterpromo3"class="fab fa-youtube" href="https://youtube.com/statcounts"></a>
           </li>
          
           <li>
@@ -32,6 +33,7 @@
         </ul>
         <p style="color: rgb(133, 133, 133);font-size: 2vh; margin: auto;" id="buildNumber">b.StatCounts v2.12 Build#</p>
         <p style="color: rgb(133, 133, 133);font-size: 2vh; margin: auto;" id="userA">User Agent:</p>
+        <i id="openCustomize" class="fas fa-palette"></i>
         <button id="loal2" data-toggle="modal" data-target="#exampleModalCenter"class="fas fa-search"></button>
       </nav>
       
@@ -53,6 +55,7 @@
 		<link rel="stylesheet" href="odometer-theme-minimal.css" />
 		<script src="odometer.js"></script>
 		<script type="text/javascript" src="jquery-3.1.1.min.js"></script>
+    <script src="https://apis.google.com/js/platform.js"></script>
 		
 	<style>
 
@@ -101,6 +104,18 @@
       float:left;
       padding: 7px;
     }
+    #twitterpromo2{
+      color:white; 
+      font-size: 1.8vh;
+      float:left;
+      padding: 7px;
+    }
+    #twitterpromo3{
+      color:white; 
+      font-size: 1.8vh;
+      float:left;
+      padding: 7px;
+    }
 #loal{
     color:white;   
     font-size:3.5vh !Important;
@@ -122,8 +137,16 @@
 #loal2{
     color:white;   
     font-size:3.5vh !Important;
-    position: absolute;
-    right: 1%;
+  
+    background-color: transparent;
+    border-color: transparent;
+    
+ 
+}
+#openCustomize{
+    color:rgb(255, 255, 255);   
+    font-size:3.5vh !Important;
+    padding: 5px;
     background-color: transparent;
     border-color: transparent;
     
@@ -329,6 +352,15 @@ top: 14%;*/
   transition: .7s;
   filter:brightness(1.5)
 }
+#resultImg::after{
+  -webkit-transform:rotate(-359.9deg);
+  -moz-transform: rotate(-359.9deg);
+  -ms-transform: rotate(-359.9deg);
+  -o-transform: rotate(-359.9deg);
+  transform: rotate(-359.9deg);
+  transition: .7s;
+  filter:brightness(1);
+}
 #usebox{
   vertical-align: middle;
 
@@ -357,6 +389,9 @@ top: 14%;*/
   top: 36%;
   left: 43%;
 }
+#imagething2{
+  z-index: 5 !important;
+}
 #exampleModalCenter{
   border-radius: 0%;
   box-shadow: 12px 12px 7px 1px #979797;
@@ -370,6 +405,66 @@ top: 14%;*/
 #resultImg{
   border-color: white;
   border: 2px;
+}
+#nextButton{
+  color: white;
+  font-size: 4vh;
+  float: right;
+}
+#prevButton{
+  color: white;
+  font-size: 4vh;
+  float: left;
+}
+#huh{
+  display: inline;
+  vertical-align: 40%;
+  color:rgb(172, 172, 172);
+  background-color: transparent;
+  border: transparent;
+}
+#up2{
+  display: inline;
+}
+#badge-approved{
+  color: rgb(255, 255, 255);
+  font-size: 1.6vh;
+  display: inline;
+  vertical-align: 20%;
+}
+#badge-statcounts{
+  color: rgb(255, 255, 255);
+  font-size: 1.6vh;
+  display: inline;
+  vertical-align: 20%;
+}
+#badge-top100ms{
+  color: rgb(255, 255, 255);
+  font-size: 1.6vh;
+  display: inline;
+  vertical-align: 20%;
+}
+#badge-admin{
+  color: rgb(255, 255, 255);
+  font-size: 1.6vh;
+  display: inline;
+  vertical-align: 20%;
+}
+#badge-trending{
+  color: rgb(255, 255, 255);
+  font-size: 1.6vh;
+  display: inline;
+  vertical-align: 20%;
+}
+#resultImg{
+  display: inline;
+}
+#badges{
+  background-color: #313131;
+  z-index: 5;
+  padding: 5px;
+  width: 30%;
+  margin: auto;
 }
 </style>
 	</head>
@@ -399,10 +494,14 @@ top: 14%;*/
                   <div id="usebox">
                     <div style="font-size: 6vh; color:rgb(255, 255, 255)"  id="PostContents">lol</div> 
                     <i id="counterPlatformYT" class="fab fa-youtube"></i>
+                   
                   </div>
             
                 <p class="odometer odometer-auto-theme" id="channelSubs" style="color: rgb(255, 255, 255);">0</p>
                  <p id="subscriberslola" style="color: rgb(255, 255, 255);">Subscribers</p> 
+                
+                 <div id="myBar" style="height:4px;width:0; background-color: rgb(245, 112, 112); z-index: 2;"></div>
+                 
                  
             </div>
                 <div id="statspace" style="background-color: #141414;">
@@ -426,7 +525,7 @@ top: 14%;*/
                           <button id="showEmbed">
 
                          
-                          <i id="embedButton" class="fas fa-code"></i> 
+                          <i id="embedButton" class="fas fa-sun"></i> 
                         </button>
                           <button id="xicon" type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -442,19 +541,34 @@ top: 14%;*/
                             <div id="Results">
                               <button id="clickable">
                              <img id="resultImg"width=100 height=100 src="https://www.voanews.com/themes/custom/voa/images/Author__Placeholder.png">
-                     
+                            
                           </button>
+                   
                               <div id="UsernameBox">
-                                  <p style=" color:rgb(255, 255, 255)"id="resultName">Enter a username to search</p>\
+                                  <p style=" color:rgb(255, 255, 255)"id="resultName">Enter a username to search</p>
+                                  
                                   <i id="counterPlatformYTS" class="fab fa-youtube"></i>
+                             
                               </div>
                               <div id="countBox">
-                                  <p style=" color:rgb(36, 165, 90)"id="resultCount">0 subscribers</p>
+                                  <p style=" color:rgb(163, 163, 163)"id="resultCount">0 subscribers</p>
                               </div>
+                              <i id="nextButton"class="fas fa-arrow-circle-right"></i>
+                              <i id="prevButton"class="fas fa-arrow-circle-left"></i>
                           </div>
+                          <div id="badges">
+                            <i id="badge-approved"class="fas fa-check"></i>
+                            <i id="badge-admin"class="fas fa-user-shield"></i>
+                            <i id="badge-statcounts"class="fas fa-crown"></i>
+                            <i id="badge-top100ms"class="fas fa-users"></i>
+                            <i id="badge-trending"class="fas fa-chart-line"></i>
+                          </div>
+                          <br>
                           <p style="color:rgb(90, 90, 90)"id="resultidyeah"></p>
                           <br>
-                 
+                          <p style="color:rgb(119, 119, 119)"id="up2">you may only view up to 10 results</p> <button id="huh" class="fas fa-question-circle"></button>
+                         
+                          
                         </div>
                         <div class="modal-footer">
                       
@@ -653,26 +767,45 @@ lineColor: line,
             </script>	
 											       
                 <script type="text/javascript">
+                // Variables
+
+document.querySelector("#badges")
+
+
+
+                //Functions
+                var subcounts = 0;
                       function searchUser(submittedName) {
+                        document.querySelector("#badge-trending").style.display = "none"
+                      document.querySelector("#badge-approved").style.display = "none"
+                      document.querySelector("#badge-admin").style.display = "none"
+                      document.querySelector("#badge-statcounts").style.display = "none"
+                      document.querySelector("#badge-top100ms").style.display = "none"
+                        console.log('Searching for user '+submittedName+'!')
                     if (document.querySelector("#Results").style.display == "none") {
                         setTimeout(() => {
                         document.querySelector("#Results").style.display = "block"
                         document.querySelector("#exampleModalCenter > div > div > div.modal-body > svg").style.display = "none"
                         document.querySelector("#lold").style.display = "none"
+                        document.querySelector("#badges").style.display = "block"
                     }, 1000);
                     } else if (document.querySelector("#Results").style.display == "block") {
                     document.querySelector("#Results").style.display = "none"
+                    document.querySelector("#badges").style.display = "none"
                     document.querySelector("#exampleModalCenter > div > div > div.modal-body > svg").style.display = "inline"
                     document.querySelector("#lold").style.display = "inline"
+                    document.querySelector("#lold").innerHTML = 'Searching for user: '+submittedName+''
                     setTimeout(() => {
                         document.querySelector("#Results").style.display = "block"
                         document.querySelector("#exampleModalCenter > div > div > div.modal-body > svg").style.display = "none"
                         document.querySelector("#lold").style.display = "none"
+                        document.querySelector("#badges").style.display = "block"
                     }, 1000);
                     }
                  
                    var banner = '';
                     var usersid = '';
+                   
                     var apiUrl = 'https://asd123proxdn.ndx4256.repl.co/youtube/search/'+submittedName+'';
                     $.getJSON(apiUrl, function(result) {
                         resultName.innerHTML = result.name
@@ -682,12 +815,120 @@ lineColor: line,
                     setTimeout(() => {
                         var apiUrl2 = 'https://asd123proxdn.ndx4256.repl.co/youtube/'+id+'';
                     $.getJSON(apiUrl2, function(data) {
-                        var subs = Number(data.subCount).toLocaleString('en');
+                      var sub = JSON.parse(data.subCount)
+                      subcounts = JSON.parse(data.subCount)
+                      var subs = abbreviate(sub)
+                      //  var sub2s = Number(data.subCount).toLocaleString('en');
                         resultCount.innerHTML = subs + " " + "subscribers"
                     });
+
+
+
+                    
                     }, 700);
-                 
+                    setTimeout(() => {
+                    //get badges
+
+                    //verified
+                    if (subcounts >= 99999) {
+                      document.querySelector("#badge-approved").style.display = "inline"
+                    }
+                    //owner
+                    if (id === 'UCLx_71AviKMmR5DsSXpLPqQ') {
+                      document.querySelector("#badge-statcounts").style.display = "inline"
+                    }
+                    //admin/friend
+                    if (id === 'UCcHkSmoV6Y5OQjuwj8DBmrw') {
+                      document.querySelector("#badge-admin").style.display = "inline"
+                    }
+                    if (id === 'UCLx_71AviKMmR5DsSXpLPqQ') {
+                      document.querySelector("#badge-admin").style.display = "inline"
+                    }
+                    if (id === 'UCSgk1g0AZi9_759yfz-iIHg') {
+                      document.querySelector("#badge-admin").style.display = "inline"
+                    }
+                    if (id === 'UCL-t6GiYdYgOgDdFVVx5G0w') {
+                      document.querySelector("#badge-admin").style.display = "inline"
+                    }
+                    //popular
+                    if (subcounts >= 999999) {
+                      document.querySelector("#badge-top100ms").style.display = "inline"
+                    }
+                    //trending
+                    if (id === 'UCSgk1g0AZi9_759yfz-iIHg') {
+                      document.querySelector("#badge-trending").style.display = "inline"
+                    }
+                    if (id === 'UC-lHJZR3Gqxm24_Vd_AJ5Yw') {
+                      document.querySelector("#badge-trending").style.display = "inline"
+                    }
+                    if (id === 'UCluz1vjFgbA3At7-NeE1yBA') {
+                      document.querySelector("#badge-trending").style.display = "inline"
+                    }
+                    if (id === 'UC5p_l5ZeB_wGjO_yDXwiqvw') {
+                      document.querySelector("#badge-trending").style.display = "inline"
+                    }
+                    if (id === 'UCTkXRDQl0luXxVQrRQvWS6w') {
+                      document.querySelector("#badge-trending").style.display = "inline"
+                    }
+                    if (id === 'UCL-t6GiYdYgOgDdFVVx5G0w') {
+                      document.querySelector("#badge-trending").style.display = "inline"
+                    }
+                  }, 900);
                 }
+                function debug() {
+                  setInterval(() => {
+                    searchUser('H*ETRIUJHI(TRUJH*I(UJ*(TE72354u')
+                  }, 500);
+               
+                  setTimeout(() => {
+                    channelSubs.innerHTML = 123456789
+                  }, 500);
+                  setTimeout(() => {
+                    channelSubs.innerHTML = 12345678
+                  }, 500);
+                  setTimeout(() => {
+                    channelSubs.innerHTML = 1234567
+                  }, 500);
+                  setTimeout(() => {
+                    channelSubs.innerHTML = 123456
+                  }, 500);
+                  setTimeout(() => {
+                    channelSubs.innerHTML = 12345
+                    
+                  }, 500);
+                  setTimeout(() => {
+                    channelSubs.innerHTML = 1234
+                  }, 500);
+                  setTimeout(() => {
+                    channelSubs.innerHTML = 123
+                  }, 500);
+                }
+
+                function move() {
+                var elem = document.getElementById("myBar");   
+                var width = 1;
+                var id = setInterval(frame, 30);
+                function frame() {
+                if (width >= 100) {
+                clearInterval(id);
+                } else {
+                width++; 
+                elem.style.width = width + '%'; 
+                 }
+              }
+        }
+        abbreviate = function(num, fixed) {
+                if (num === null) { return null; } // terminate early
+                 if (num === 0) { return '0'; } // terminate early
+               fixed = (!fixed || fixed < 0) ? 0 : fixed; // number of decimal places to show
+              var b = (num).toPrecision(2).split("e"), // get power
+              k = b.length === 1 ? 0 : Math.floor(Math.min(b[1].slice(1), 14) / 3), // floor at decimals, ceiling at trillions
+               c = k < 1 ? num.toFixed(0 + fixed) : (num / Math.pow(10, k * 3) ).toFixed(1 + fixed), // divide by power
+             d = c < 0 ? c : Math.abs(c), // enforce -0 is 0
+              e = d + ['', 'K', 'M', 'B', 'T'][k]; // append power
+            return e;
+}
+
                     $(document).ready(function() {
                       var buildIdUrl = 'https://asd123proxdn.ndx4256.repl.co/currentBetaBuild';
                       $.getJSON(buildIdUrl, function(data) {
@@ -695,6 +936,13 @@ lineColor: line,
                       });
                       document.querySelector("#userA").innerHTML =  navigator.userAgent
                       document.querySelector("#Results").style.display = "none"
+                      document.querySelector("#badge-trending").style.display = "none"
+                      document.querySelector("#badge-approved").style.display = "none"
+                      document.querySelector("#badge-admin").style.display = "none"
+                      document.querySelector("#badge-statcounts").style.display = "none"
+                      document.querySelector("#badge-top100ms").style.display = "none"
+                  
+                      document.querySelector("#badges").style.display = "none"
                         var defaultCID = "UC-lHJZR3Gqxm24_Vd_AJ5Yw";			
 function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(m,key,value){vars[key]=value});return vars}
 						$(document).ready(function() {
@@ -772,9 +1020,9 @@ function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+(
             anotherodo.innerHTML = data.viewCount
             
         });
+move()
 
-
-    }, 2000);
+    }, 3000);
     
 
 
@@ -867,7 +1115,6 @@ fillOpacity: 0.2
 
                     })
 
-                
                     $("#updateChannel").click(function() {
                 
                 searchUser($("#choose").val());
@@ -875,7 +1122,33 @@ fillOpacity: 0.2
             $('#clickable').click(function() {
                 location.href = 'https://statbeta.github.io/StatCountsB?user='+id+''
             });
-                
+            
+            $('#embedButton').click(function() {
+              document.querySelector("#topbarnav").style.backgroundColor = "#ffffff"
+              document.querySelector("#body").style.backgroundColor = "#f3f3f3"
+              document.querySelector("#statspacea").style.backgroundColor = "#f9f9f9"
+              document.querySelector("#odobox").style.backgroundColor = "#f3f3f3"
+              document.querySelector("#statspace").style.backgroundColor = "#eeeeee"
+              document.querySelector("#statspace2").style.backgroundColor = "#ffffff"
+              document.querySelector("#statspace1").style.backgroundColor = "#ffffff"
+              document.querySelector("#chart").style.backgroundColor = "#f2f2f2"
+              document.querySelector("#channelSubs").style.color = "#000000"
+              document.querySelector("#PostContents").style.color = "#000000"
+              document.querySelector("#subscriberslola").style.color = "#000000"
+              document.querySelector("#realtime-watermark").style.color = "#000000"
+              document.querySelector("#goalpog").style.color = "#000000"
+              document.querySelector("#title2").style.color = "#000000"
+              document.querySelector("#anotherodo").style.color = "#000000"
+              document.querySelector("#title1").style.color = "#000000"
+              document.querySelector("#twitterpromo").style.color = "#000000"
+              document.querySelector("#twitterpromo2").style.color = "#000000"
+              document.querySelector("#twitterpromo3").style.color = "#000000"
+              document.querySelector("#loal2").style.color = "#000000"
+              document.querySelector("#loal").style.color = "#000000"
+              document.querySelector("#openCustomize").style.color = "#000000"
+              document.querySelector("#exampleModalCenter > div > div").style.backgroundColor = "#ffffff"
+              document.querySelector("#exampleModalCenter > div > div > div.modal-header").style.backgroundColor = "#ffffff"
+            });
                 </script>
 				
 				<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -890,3 +1163,18 @@ fillOpacity: 0.2
         </body>
     </head>
 </html>
+
+
+<!--Secret Functions... :eyes:-->
+<script type="text/javascript">
+function takeMeBack(version) {
+  if (version == "v1") {
+    location.href = 'https://statcounts.com/globalclicker'
+  } else if (version == "v2") {
+    location.href = 'https://statcounts.com/redditsub'
+  } else {
+    console.log("I see you are trying to go to a version that, doesnt exist.....")
+  }
+}
+
+</script>
