@@ -806,14 +806,14 @@ document.querySelector("#badges")
                    var banner = '';
                     var usersid = '';
                    
-                    var apiUrl = 'https://asd123proxdn.ndx4256.repl.co/youtube/search/'+submittedName+'';
+                    var apiUrl = 'https://backend.statcounts.com/youtube/search/'+submittedName+'';
                     $.getJSON(apiUrl, function(result) {
                         resultName.innerHTML = result.name
                         document.querySelector("#resultImg").src = result.pfp
                        id = resultidyeah.innerHTML = result.userID
                     });
                     setTimeout(() => {
-                        var apiUrl2 = 'https://asd123proxdn.ndx4256.repl.co/youtube/'+id+'';
+                        var apiUrl2 = 'https://backend.statcounts.com/youtube/'+id+'';
                     $.getJSON(apiUrl2, function(data) {
                       var sub = JSON.parse(data.subCount)
                       subcounts = JSON.parse(data.subCount)
@@ -930,7 +930,7 @@ document.querySelector("#badges")
 }
 
                     $(document).ready(function() {
-                      var buildIdUrl = 'https://asd123proxdn.ndx4256.repl.co/currentBetaBuild';
+                      var buildIdUrl = 'https://backend.statcounts.com/currentBetaBuild';
                       $.getJSON(buildIdUrl, function(data) {
                         document.querySelector("#buildNumber").innerHTML = "b.StatCounts v2.12 Build#" + data.currentBuild
                       });
@@ -958,8 +958,8 @@ function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+(
     function loadChannel(name) {
       
         channelName = name;
-        var url = 'https://asd123proxdn.ndx4256.repl.co/youtube/estimated/'+name+''
-        var urlAPI = 'https://asd123proxdn.ndx4256.repl.co/youtube/'+name+''
+        var url = 'https://backend.statcounts.com/youtube/estimated/'+name+''
+        var urlAPI = 'https://backend.statcounts.com/youtube/'+name+''
         $.getJSON(url, function(data) {
           if (data.subCount == null) {
             $.getJSON(urlAPI, function(apiData) {
@@ -989,8 +989,8 @@ function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+(
 
         
     
-        var url = 'https://asd123proxdn.ndx4256.repl.co/youtube/estimated/'+channelName+''
-        var urlAPI = 'https://asd123proxdn.ndx4256.repl.co/youtube/'+channelName+''
+        var url = 'https://backend.statcounts.com/youtube/estimated/'+channelName+''
+        var urlAPI = 'https://backend.statcounts.com/youtube/'+channelName+''
         $.getJSON(url, function(data) {
           if (data.subCount == null) {
             $.getJSON(urlAPI, function(apiData) {
