@@ -681,14 +681,14 @@ lineColor: line,
                  
                    var banner = '';
                     var usersid = '';
-                    var apiUrl = 'https://asd123proxdn.ndx4256.repl.co/youtube/search/videos/'+submittedName+'';
+                    var apiUrl = 'https://backend.statcounts.com/youtube/search/videos/'+submittedName+'';
                     $.getJSON(apiUrl, function(result) {
                         resultName.innerHTML = result.name
                         document.querySelector("#resultImg").src = result.pfp
                        id = resultidyeah.innerHTML = result.userID
                     });
                     setTimeout(() => {
-                        var apiUrl2 = 'https://asd123proxdn.ndx4256.repl.co/youtube/videos/'+id+'';
+                        var apiUrl2 = 'https://backend.statcounts.com/youtube/videos/'+id+'';
                     $.getJSON(apiUrl2, function(data) {
                         var subs = Number(data.likesCount).toLocaleString('en');
                         resultCount.innerHTML = subs + " " + "likes"
@@ -710,7 +710,7 @@ lineColor: line,
               }
         }
                     $(document).ready(function() {
-                      var buildIdUrl = 'https://asd123proxdn.ndx4256.repl.co/currentBetaBuild';
+                      var buildIdUrl = 'https://backend.statcounts.com/currentBetaBuild';
                       $.getJSON(buildIdUrl, function(data) {
                         document.querySelector("#buildNumber").innerHTML = "b.StatCounts v2.12 Build#" + data.currentBuild
                       });
@@ -731,7 +731,7 @@ function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+(
     function loadChannel(name) {
       
         channelName = name;
-        var urlAPI = 'https://asd123proxdn.ndx4256.repl.co/youtube/videos/'+name+''
+        var urlAPI = 'https://backend.statcounts.com/youtube/videos/'+name+''
         
             $.getJSON(urlAPI, function(apiData) {
               channelSubs.innerHTML = apiData.likesCount
@@ -748,7 +748,7 @@ function getUrlVars(){var vars={};var parts=window.location.href.replace(/[?&]+(
     setInterval(function() {
 
         
-        var urlAPI = 'https://asd123proxdn.ndx4256.repl.co/youtube/videos/'+channelName+''
+        var urlAPI = 'https://backend.statcounts.com/youtube/videos/'+channelName+''
       
             $.getJSON(urlAPI, function(apiData) {
               channelSubs.innerHTML = apiData.likesCount
